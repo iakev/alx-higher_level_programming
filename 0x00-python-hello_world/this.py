@@ -18,4 +18,4 @@ f"Now is better than never.\n"
 f"Although never is often better than *right* now.\n"
 f"If the implementation is hard to explain, it's a bad idea.\n"
 f"If the implementation is easy to explain, it may be a good idea.\n"
-f"Namespaces are one honking great idea -- let's do more of those!")
+f"Namespaces are one honking great idea -- let's do more of those!\n")
