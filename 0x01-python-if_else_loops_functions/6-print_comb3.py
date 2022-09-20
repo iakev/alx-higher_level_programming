@@ -1,11 +1,5 @@
 #!/usr/bin/python3
-for i in range(0,100,10):
-    for j in range(i + (i//10) + 1, i + 10):
-        if j < 10:
-          print(f"0{j}",end=", ")
-        else:
-            if j % 10 == 0:
-                j = j + (j // 10)
-                print(f"{j}",end=", " if j != 99 else "\n")
-            else:
-                print(f"{j}",end=", " if j != 89 else "\n")
+for i in range(0, 8):
+    for j in range(i + 1, 10):
+        print("{:d}{:d}".format(i, j), end=', ')
+print("{:d}{:d}".format(i + 1, j))
