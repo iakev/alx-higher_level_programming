@@ -1,4 +1,4 @@
-#!/usr/bin/pthon3
+#!/usr/bin/python3
 
 def roman_to_int(roman_string):
     roman_dict = {"I": 1, "V": 5, "X": 10, "L": 50,
