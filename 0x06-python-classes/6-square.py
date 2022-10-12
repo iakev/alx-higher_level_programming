@@ -73,6 +73,5 @@ class Square:
         for m in range(self.__position[1]):
             print()
         for i in range(0, self.__size):
-            if self.__position[1] <= 0:
-                print("".join([" " for k in range(self.__position[0])]), end="")
+            print("".join([" " for k in range(self.__position[0])]), end="")
             print("".join(["#" for j in range(self.__size)]))
