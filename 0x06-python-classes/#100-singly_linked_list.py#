@@ -1,0 +1,77 @@
+#!/usr/bin/python3
+"""
+ A module that defines a node class 'Node' that contains data in a linked list.
+ The module also defines a class 'SinglyLinkedList' that utilizes the node class
+"""
+
+
+class Node:
+    """
+    Class to define a node to be used in  linked list
+    """
+
+    def __init__(self, data, next_node=None):
+        """
+        A function to initialize the node
+        """
+        if type(data) != int:
+            raise TypeError("data must be an integer")
+        self.__data = data
+        self.__next_node = next_node
+
+        @property
+        def data(self):
+            return self.data
+
+        @data.setter
+        def data(self):
+            if type(data) != int:
+                raise TypeError("data must be an integer")
+            else:
+                self.__data = data
+
+        @property
+        def next_node(self, value):
+            if type(value) != None or type(value) != Node:
+                raise TypeError("next_node must be a Node object")
+            else:
+                self.__next_node = value
+
+class SinglyLinkedList:
+    """
+    A class that defines a singly linked list that utilizes the node objects
+    """
+
+    def __init__(self):
+        """
+        Initiliazing the singlylinkedlist
+        """
+
+        self.__head = None
+
+    def sorted_insert(self, value):
+        """
+        A method that inserts a new Node in an ascending order
+        """
+        if type(value) != int:
+            raise TypeError("data must be an integer")
+        else:
+            if self.__head == None:
+                self.__head = Node(value)
+            else:
+                current = self.__head
+                new_node = Node(value)
+                #while current.next_node != None:
+                 #   current = current.next_node
+                if current.data < new_node.data and current.next_node != None:
+                    current.next_node = current
+                elif current.data:
+
+    def __str__(self):
+        """
+        Friendly string representation of the linkedlist
+        """
+        current = self.__head
+        while current:
+            print(current.data)
+            current = current.next_node
