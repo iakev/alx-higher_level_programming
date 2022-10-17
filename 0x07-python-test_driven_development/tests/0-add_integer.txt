@@ -1,0 +1,51 @@
+===============================
+ How to Use 0-add_integer.py
+===============================
+
+This library is very simple, since it only has one function called
+``add_integer()``.
+
+
+``add_integer()`` returns the sum of its arguments (either floats or ints).
+returned value is equivalent to using the ``+`` operator.
+
+::
+
+    >>> from 0-add_integer import add_integer
+    >>> add_integer(2, 3)
+    5
+
+It also works with floating-point values.
+
+::
+
+    >>> add_integer(2.0, 3.0)
+    5
+
+Also works when only one argument is a float
+::
+   >>> add_integer(2, 3.0)
+   5
+
+
+It also works when the second argument is not provided using default argument 98
+
+::
+    >>> add_integer(2)
+    100
+
+Should raise a TypeError when any of the arguments are not types float or int
+
+::
+   >>> add_integer(2, "School")
+   Traceback (most recent call last):
+   TypeError: b must be an integer
+
+   >>> add_integer(None)
+   Traceback (most recent call last):
+   TypeError: a must be an integer
+
+Should raise a type error when called without any arguments
+   >>> add_integers()
+   Traceback (most recent call last):
+   TypeError: missing 1 required positional argument: 'a'
