@@ -11,7 +11,7 @@ returned value is equivalent to using the ``+`` operator.
 
 ::
 
-    >>> from 0-add_integer import add_integer
+    >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(2, 3)
     5
 
@@ -37,15 +37,15 @@ It also works when the second argument is not provided using default argument 98
 Should raise a TypeError when any of the arguments are not types float or int
 
 ::
-   >>> add_integer(2, "School")
+   >>> add_integer(2, "School") #doctest: +REPORT_NDIFF
    Traceback (most recent call last):
    TypeError: b must be an integer
 
-   >>> add_integer(None)
+   >>> add_integer(None) #doctest: +REPORT_NDIFF
    Traceback (most recent call last):
    TypeError: a must be an integer
 
 Should raise a type error when called without any arguments
-   >>> add_integers()
+   >>> add_integer() #doctest: +REPORT_NDIFF
    Traceback (most recent call last):
-   TypeError: missing 1 required positional argument: 'a'
+   TypeError: add_integer() missing 1 required positional argument: 'a'
