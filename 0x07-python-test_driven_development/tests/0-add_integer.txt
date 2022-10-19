@@ -65,3 +65,10 @@ Should also protect against float converting NaN to integer
    >>> add_integer(x*2, 1)
    Traceback (most recent call last):
    OverflowError: cannot convert float infinity to integer
+
+Should also protect fram a NaN being converted to integer
+  >>> import numpy as np
+  >>> add_integer(np.nan, 2)
+  Traceback (most recent call last):
+  ValueError: cannot convert float NaN to integer
+
