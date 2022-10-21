@@ -34,3 +34,21 @@ class TestMaxInteger(unittest.TestCase):
         test for list = [1, 3, 4, 2]
         """
         self.assertEqual(max_integer([1, 3, 4, 2]), 4, "Should be 4")
+
+    def test_list3(self):
+        """
+        test for list = [-9, -90, -7, -65]
+        """
+        self.assertEqual(max_integer([-9, -90, -7, -65]), -7, "Should be -7")
+
+    def test_list4(self):
+        """
+        test for list = [[3]]
+        """
+        self.assertEqual(max_integer([3]), 3, "should be 3")
+
+    def test_list5(self):
+        """
+        test for list = [1234, 7, -8, 9]
+        """
+        self.assertEqual(max_integer([1234, 7, -8, 9]), 1234, "should be 1234")
