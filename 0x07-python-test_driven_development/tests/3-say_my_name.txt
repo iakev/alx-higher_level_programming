@@ -20,5 +20,4 @@ Should check to ensure that there is a required positional argument
 
 Should print first name without last name
        >>> say_my_name("Kev") #doctest: +REPORT_NDIFF
-       My name is Kev
-
+       My name is Kev 
