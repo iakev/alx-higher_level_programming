@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-A module that contains a function that prints a text with 2 new lines after each
-characte'.', '?' and ':'
+A module that contains a function that prints a text with 2 new lines
+after each of the following character '.', '?' and ':'
 """
 
 
@@ -17,7 +17,6 @@ def text_indentation(text):
         flag = False
         strlist = list(text)
         for item in strlist:
-#            print(item)
             if item == '.' or item == '?' or item == ':':
                 print(item)
                 print()
