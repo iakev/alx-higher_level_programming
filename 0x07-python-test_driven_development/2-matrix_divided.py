@@ -10,12 +10,12 @@ def matrix_divided(matrix, div):
     with a divisor 'div'
     """
 
-    new_matrix = matrix[:]
     if type(div) != int and type(div) != float:
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
     row_len = len(matrix[0])
+    new_matrix = [[0 for i in range(row_len)]for j in range(len(matrix))]
     for i in range(len(matrix)):
         if len(matrix[i]) != row_len:
             raise TypeError("Each row of the matrix must have the same size")
