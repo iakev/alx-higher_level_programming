@@ -1,0 +1,41 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Should be a list of lists of integers or floats
+       >>> matrix = [[1, 2, 3],[2.4, 5.6, 7.9], ['string', ('tu',), 3.4]]
+       >>> matrix_divided(matrix, 2)
+       Traceback (most recent call last):
+       TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Should ensure that all rows are of the same length
+       >>> matrix1 = [[1, 2, 3, 7],[2.4, 5.6, 7.9], [12, 5, 3.4]]
+       >>> matrix_divided(matrix1, 2.3)
+       Traceback (most recent call last):
+       TypeError: Each row of the matrix must have the same size
+
+should ensure that the divisor `div` is either a float or an int
+       >>> matrix = [[48, 64, 36],[40, 72, 160]]
+       >>> matrix_divided(matrix, 'one')
+       Traceback (most recent call last):
+       TypeError: div must be a number
+
+Ensure to capture division by zero error
+       >>> matrix = [[48, 64, 36],[40, 72, 160]]
+       >>> matrix_divided(matrix, 0)
+       Traceback (most recent call last):
+       ZeroDivisionError: division by zero
+
+Divided all elements of matrix by 'div' with a precision of 2 decimal places
+	>>> matrix = [[48, 64, 36],[40, 72, 160]]
+	>>> matrix_divided(matrix, 2.0)
+	[[24.0, 32.0, 18.0], [20.0, 36.0, 80.0]]
+
+Correct output should be:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Returns a new matrix
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> ans = matrix_divided(matrix, 3)
+	>>> id(matrix) == id(ans)
+	False
