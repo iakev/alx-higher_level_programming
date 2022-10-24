@@ -28,3 +28,10 @@ ensure print_sorted() method sorts the list in ascending orde
        [1, 2, 3, 4, 5]
        >>> print(my_list)
        [1, 4, 2, 3, 5]
+
+ensure that a non integer can't be appended
+       >>> my_list = MyList()
+       >>> my_list.append(1)
+       >>> my_list.append('one')
+       Traceback (most recent call last):
+       TypeError: value needs to be an integer
