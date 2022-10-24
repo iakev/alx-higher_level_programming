@@ -31,6 +31,7 @@ class BaseGeometry:
         else:
             pass
 
+
 class Rectangle(BaseGeometry):
     """
     A class that defines a reactangle
@@ -39,10 +40,13 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """
-        Recatngle's initializer function
+        Rectangle's initializer function
         """
 
-        super().integer_validator("width", width)
-        super().integer_validator("height", height)
+        self.integer_validator(width, height)
         self.__width = width
         self.__height = height
+
+    def integer_validator(self, width, height):
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
