@@ -1,0 +1,29 @@
+This is a doctest suite that contains various interctive tests for the Integer
+validator task
+	  >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Ensure that the class contains an public instance area() method
+       >>> bg = BaseGeometry()
+       >>> bg.area()
+       Traceback (most recent call last):
+       Exception: area() is not implemented
+
+Ensure it contains a public instance integer_validator(name, value) method
+that validates  value. Name is assumed to be a string
+     >>> bg.integer_validator("Kevin", 28)
+
+Ensure that the name value is always a string
+       >>> bg. integer_validator(1234, 28)
+       Traceback (most recent call last):
+       TypeError: name should be a string
+
+Ensure that the value is always an integer
+       >>> bg.integer_validator("Kevin", [1,2,3])
+       Traceback (most recent call last):
+       TypeError: Kevin must be an integer
+
+Ensure that the value integer is greate than 0
+       >>> bg.integer_validator("Kevin", -23)
+       Traceback (most recent call last):
+       ValueError: Kevin must be greater than 0
+
