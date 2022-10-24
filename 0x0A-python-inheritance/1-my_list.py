@@ -20,3 +20,9 @@ class MyList(list):
         order = self[:]
         order.sort()
         print(order)
+
+    def append(self, val):
+        if type(val) != int:
+            raise TypeError("values needs to be an integer")
+        else:
+            super().append(val)
