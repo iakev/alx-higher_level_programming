@@ -30,3 +30,19 @@ class BaseGeometry:
             raise ValueError(f"{name} must be greater than 0")
         else:
             pass
+
+class Rectangle(BaseGeometry):
+    """
+    A class that defines a reactangle
+    and it inherits from BaseGeometry
+    """
+
+    def __init__(self, width, height):
+        """
+        Recatngle's initializer function
+        """
+
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
+        self.__width = width
+        self.__height = height
