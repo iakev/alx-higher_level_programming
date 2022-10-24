@@ -22,6 +22,10 @@ class MyList(list):
         print(order)
 
     def append(self, val):
+        """
+        Customizing list's append method to ensure it only
+        accepts integer values
+        """
         if type(val) != int:
             raise TypeError("value needs to be an integer")
         else:
