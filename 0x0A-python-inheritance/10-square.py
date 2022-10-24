@@ -17,8 +17,20 @@ class Square(Rectangle):
         """
         Initilaizing square with an equal side 'size'
         """
-        super().__init__(size, size)
+
+        self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
+
+    def area(self):
+        """
+        compute area of square
+        """
+
+        return self.__size ** 2
 
     def __str__(self):
+        """
+        Reresentation of square class
+        """
         return f"[{Rectangle.__name__}] {self.__size}/{self.__size}"
