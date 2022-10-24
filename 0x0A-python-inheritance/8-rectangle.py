@@ -43,10 +43,7 @@ class Rectangle(BaseGeometry):
         Rectangle's initializer function
         """
 
-        self.integer_validator(width, height)
-        self.__width = width
-        self.__height = height
-
-    def integer_validator(self, width, height):
         super().integer_validator("width", width)
+        self.__width = width
         super().integer_validator("height", height)
+        self.__height = height
