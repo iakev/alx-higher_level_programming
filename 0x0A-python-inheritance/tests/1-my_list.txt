@@ -1,0 +1,30 @@
+tests to ensure that the MyList class is upto standards
+      >>> MyList = __import__('1-my_list').MyList
+
+ensure that MyList is a subclass of list
+       >>> issubclass(MyList, list)
+       True
+
+ensure that MyList can an empty list
+       >>> my_list = MyList()
+       >>> print(my_list)
+       []
+
+ensure that MyList can instatiate from an iterable
+       >>> my_list = MyList((1, 2, 3))
+       >>> print(my_list)
+       [1, 2, 3]
+
+ensure print_sorted() method sorts the list in ascending orde
+       >>> my_list = MyList()
+       >>> my_list.append(1)
+       >>> my_list.append(4)
+       >>> my_list.append(2)
+       >>> my_list.append(3)
+       >>> my_list.append(5)
+       >>> print(my_list)
+       [1, 4, 2, 3, 5]
+       >>> my_list.print_sorted()
+       [1, 2, 3, 4, 5]
+       >>> print(my_list)
+       [1, 4, 2, 3, 5]
