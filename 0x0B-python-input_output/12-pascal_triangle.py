@@ -16,7 +16,7 @@ def pascal_triangle(n):
     ls = [[]]
 
     if int(n) <= 0:
-        return ls
+        return ls[0]
     recursive_pascal_triangle(i, ls, int(n))
     return ls
 
