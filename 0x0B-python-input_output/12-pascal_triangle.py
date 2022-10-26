@@ -20,23 +20,24 @@ def pascal_triangle(n):
     recursive_pascal_triangle(i, ls, int(n))
     return ls
 
+
 def recursive_pascal_triangle(i, ls, n):
     """
     a recursive function that helps print the
     pascal triangle function above
     """
 
-    #base case
+    # base case
     if i == n:
         return
     elif i == 0:
         ls1 = [1]
         ls[0] = ls1
-        recursive_pascal_triangle(i+1 , ls, n)
+        recursive_pascal_triangle(i + 1, ls, n)
     elif i == 1:
-        ls1 =[1, 1]
+        ls1 = [1, 1]
         ls.append(ls1)
-        recursive_pascal_triangle(i+1, ls, n)
+        recursive_pascal_triangle(i + 1, ls, n)
     else:
         ls2 = []
         for j in range(len(ls[i-1])):
@@ -46,4 +47,4 @@ def recursive_pascal_triangle(i, ls, n):
         ls2.insert(0, 1)
         ls2.append(1)
         ls.append(ls2)
-        recursive_pascal_triangle(i+1, ls, n)
+        recursive_pascal_triangle(i + 1, ls, n)
