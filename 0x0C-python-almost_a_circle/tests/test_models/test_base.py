@@ -24,6 +24,7 @@ class TestBaseClass(unittest.TestCase):
         """
         Test initialization function works
         """
+
         b1 = Base()
         b2 = Base()
         b3 = Base(12)
