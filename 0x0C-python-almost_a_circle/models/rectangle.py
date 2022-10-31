@@ -151,7 +151,8 @@ class Rectangle(Base):
         """
         assigns an argument to each attribute from args
         """
-        if args is not  None and len(args) != 0:
+
+        if args is not None and len(args) != 0:
             for i in range(len(args)):
                 if i == 0:
                     self.id = args[i]
