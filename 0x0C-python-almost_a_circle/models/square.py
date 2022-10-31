@@ -40,3 +40,22 @@ class Square(Rectangle):
         super().validate_height_width("width", val)
         setattr(self, 'width', val)
         setattr(self, 'height', val)
+
+    def update(self, *args, **kwargs):
+        """
+        assigns an argument to each attribute from args
+        """
+
+        if args is not None and len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                elif i == 1:
+                    self.size = args[i]
+                elif i == 2:
+                    self.x = args[i]
+                elif i == 3:
+                    self.y = args[i]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, kwargs[key])
