@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+65;6003;1c"""
 A module that defines a base class with
 it's private attributes and a class constructor
 """
@@ -87,7 +87,7 @@ class Base:
 
         ls = []
         filename = cls.__name__ + ".json"
-        with open(filename, "r", encoding="utf-8") as f:
+        with open(filename, "r", encoding = "utf-8") as f:
             text = f.read()
         if not text:
             return ls
