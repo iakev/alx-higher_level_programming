@@ -1,41 +1,40 @@
 #!/usr/bin/python3
 """
-A module that tests the Rectangle class that inherits
-from Base class
+A module that tests the Square class that inherits
+from Rectangle class
 """
 
+from models.square import Square
 from models.rectangle import Rectangle
 from models.base import Base
 import unittest
 
 
-class TestRectangleClass(unittest.TestCase):
+class TestSquareClass(unittest.TestCase):
     """
-    Class that defines methods to test functionality
-    of Rectangle class
+    Class to test Square class
     """
-
-    def test_base_instance(self):
+    def test_rectangle_instance(self):
         """
-        method to test that rectangle inherits from
-        Base class
+        method to test that Square inherits from
+        Rectangle class
         """
 
-        rec = Rectangle(10, 56, 0, 0, None)
-        self.assertEqual((isinstance(rec, Base)
-                          and type(rec).__name__ != Base.__name__) , True)
+        sqr = Square(56, 0, 0, None)
+        self.assertEqual((isinstance(sqr, Rectangle)
+                          and type(sqr).__name__ != Rectangle.__name__) , True)
 
-    def test_rectangle_id(self):
+    def test_Square_id(self):
         """
         Ensure Rectangle id is correctly set using
         Base class __init__ magin method
         """
 
-        r1 = Rectangle(10, 10, 0, 0)
-        r2 = Rectangle(12, 12, 0, 0)
-        r3 = Rectangle(23, 89, 0, 0, 12)
-        r4 = Rectangle(45, 90, 0, 0)
-        ls = [r1.id, r2.id, r3.id, r4.id]
+        s1 = Square(10, 0, 0)
+        s2 = Square(12, 0, 0)
+        s3 = Square(89, 0, 0, 12)
+        s4 = Square(90, 0, 0)
+        ls = [s1.id, s2.id, s3.id, s4.id]
         self.assertEqual(ls, [5, 6, 12, 7], "__init__ malfunctioned")
 
     def test_attributes_set(self):
@@ -44,54 +43,54 @@ class TestRectangleClass(unittest.TestCase):
         are passed
         """
 
-        r = Rectangle(12, 6, 1, 5, 2)
+        r = Square(6, 1, 5, 2)
         ls = [r.width, r.height, r.x, r.y, r.id]
-        self.assertEqual(ls, [12, 6, 1, 5, 2])
+        self.assertEqual(ls, [6, 6, 1, 5, 2])
 
     def test_attribute_type(self):
         """
         Ensure that attributes types are either int or floats
         """
-        self.assertRaises(TypeError, Rectangle, '12', 6, 0, 0)
+        self.assertRaises(TypeError, Square, '12', 6, 0, 0)
 
     def test_heightsetter(self):
         """
         Ensure that height setters work well
         """
 
-        r = Rectangle(12, 6, 0, 0)
-        r.height = 18
-        self.assertEqual(r.height, 18)
+        r = Square(12, 6, 0)
+        r.size = 18
+        self.assertEqual(r.size, 18)
 
     def test_heightsetterassert(self):
         """
         Ensure that height setters assert work well
         """
 
-        self.assertRaises(ValueError, Rectangle, -10, 6, 0, 0)
+        self.assertRaises(ValueError, Square, -10, 6, 0, 0)
 
     def test_widthsetters(self):
         """
         Ensure that height setters work well
         """
 
-        r = Rectangle(12, 6, 0, 0)
-        r.width = 36
-        self.assertEqual(r.width, 36)
+        r = Square(12, 0, 0)
+        r.size = 36
+        self.assertEqual(r.size, 36)
 
     def test_widthsetterassert(self):
         """
         Ensure that height setters assert work well
         """
 
-        self.assertRaises(ValueError, Rectangle, 10, -6, 0, 0)
+        self.assertRaises(ValueError, Square, 10, -6, 0, 0)
 
     def test_xsetters(self):
         """
         Ensure that height setters work well
         """
 
-        r = Rectangle(12, 6, 0, 0)
+        r = Square(12, 6, 0, 0)
         r.x = 9
         self.assertEqual(r.x, 9)
 
@@ -100,7 +99,7 @@ class TestRectangleClass(unittest.TestCase):
         Ensure that height setters assert work well
         """
 
-        self.assertRaises(ValueError, Rectangle, 10, 6, -1, 0)
+        self.assertRaises(ValueError, Square, 6, -1, 0)
 
 
     def test_ysetters(self):
@@ -108,7 +107,7 @@ class TestRectangleClass(unittest.TestCase):
         Ensure that height setters work well
         """
 
-        r = Rectangle(12, 6, 0, 0)
+        r = Square(12, 6, 0, 0)
         r.y = 3
         self.assertEqual(r.y, 3)
 
@@ -117,7 +116,7 @@ class TestRectangleClass(unittest.TestCase):
         Ensure that height setters assert work well
         """
 
-        self.assertRaises(ValueError, Rectangle, 10, 6, 0, -1)
+        self.assertRaises(ValueError, Square, 6, 0, -1)
 
     def test_area(self):
         """
@@ -125,22 +124,22 @@ class TestRectangleClass(unittest.TestCase):
         fine
         """
 
-        r = Rectangle(8,7)
-        self.assertEqual(r.area(), 56)
+        r = Square(8,2)
+        self.assertEqual(r.area(), 64)
 
     def test_str(self):
         """
         Ensure the str representation is fine
         """
 
-        r6 = Rectangle(5, 5, 1)
-        self.assertEqual(str(r6), "[Rectangle] (1) 1/0 - 5/5")
+        r6 = Square(5, 1)
+        self.assertEqual(str(r6), "[Square] (1) 1/0 - 5/5")
 
     def test_update(self):
         """
         test update method of Rectangle
         """
-        r1 = Rectangle(10, 10, 10, 10)
+        r1 = Square(10, 10, 10)
         r1.update(89, 2)
         r1.update(x=1, height=2, y=3, width=4)
         self.assertEqual([r1.id, r1.width, r1.height, r1.x, r1.y],

@@ -129,7 +129,40 @@ class Rectangle(Base):
         with # characters to stdout
         """
 
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
+            for k in range(self.__x):
+                print(" ", end="")
             for j in range(self.__width):
                 print('#', end="")
             print()
+
+    def __str__(self):
+        """
+        customize string representation
+        of Rectangle
+        """
+
+        return f"[Rectangle] ({self.id}) " \
+            f"{self.x}/{self.y} - {self.width}/{self.height}"
+
+    def update(self, *args, **kwargs):
+        """
+        assigns an argument to each attribute from args
+        """
+        if args is not  None and len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                elif i == 1:
+                    self.width = args[i]
+                elif i == 2:
+                    self.height = args[i]
+                elif i == 3:
+                    self.x = args[i]
+                elif i == 4:
+                    self.y = args[i]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, kwargs[key])
