@@ -53,3 +53,13 @@ class Base:
             filename = cls.__name__ + ".json"
             with open(filename, "w", encoding="utf-8") as f:
                 f.write(cls.to_json_string(None))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns pytyon list of JSON string representation 'json_string'
+        """
+
+        if json_string is None or json_string == "":
+            return []
+        return json.loads(json_string)
