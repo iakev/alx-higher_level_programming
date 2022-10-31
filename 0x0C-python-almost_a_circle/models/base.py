@@ -76,5 +76,13 @@ class Base:
             return rec
         except Exception:
             sqr = cls(12)
-            sqr.updte(**dictinary)
+            sqr.update(**dictinary)
             return sqr
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        A class returning a list of instances
+        """
+
+        
