@@ -70,11 +70,11 @@ class Base:
         Returns an instance with all attributes set
         """
 
-        try:
+        if cls.__name__ == "Rectangle":
             rec = cls(12, 6)
             rec.update(**dictionary)
             return rec
-        except Exception:
-            sqr = cls(5)
-            sqr.update(**dictionary)
+        elif cls.__name__ == "Square":
+            sqr = cls(12)
+            sqr.updte(**dictinary)
             return sqr
