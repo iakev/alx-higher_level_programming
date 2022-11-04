@@ -90,9 +90,10 @@ class Base:
 
         ls = []
         filename = cls.__name__ + ".json"
-        with open(filename, "r", encoding="utf-8") as f:
-            text = f.read()
-        if not text:
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                text = f.read()
+        except FileNotFoundError:
             return ls
         list_output = cls.from_json_string(text)
         for dic in list_output:
