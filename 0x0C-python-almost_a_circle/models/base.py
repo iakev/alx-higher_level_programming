@@ -71,13 +71,16 @@ class Base:
         """
 
         try:
-            rec = cls(12, 6)
-            rec.update(**dictionary)
-            return rec
+            if cls.__name__ == "Rectangle":
+                rec = cls(12, 6)
+                rec.update(**dictionary)
+                return rec
+            elif cls.__name__ == "Square":
+                sqr = cls(12)
+                sqr.update(**dictionary)
+                return sqr
         except Exception:
-            sqr = cls(12)
-            sqr.update(**dictinary)
-            return sqr
+            raise Exception
 
     @classmethod
     def load_from_file(cls):
@@ -85,4 +88,13 @@ class Base:
         A class returning a list of instances
         """
 
-        
+        ls = []
+        filename = cls.__name__ + ".json"
+        with open(filename, "r", encoding="utf-8") as f:
+            text = f.read()
+        if not text:
+            return ls
+        list_output = cls.from_json_string(text)
+        for dic in list_output:
+            ls.append(cls.create(**dic))
+        return ls
