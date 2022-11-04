@@ -24,19 +24,6 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual((isinstance(sqr, Rectangle)
                           and type(sqr).__name__ != Rectangle.__name__) , True)
 
-    def test_Square_id(self):
-        """
-        Ensure Rectangle id is correctly set using
-        Base class __init__ magin method
-        """
-
-        s1 = Square(10, 0, 0)
-        s2 = Square(12, 0, 0)
-        s3 = Square(89, 0, 0, 12)
-        s4 = Square(90, 0, 0)
-        ls = [s1.id, s2.id, s3.id, s4.id]
-        self.assertEqual(ls, [5, 6, 12, 7], "__init__ malfunctioned")
-
     def test_attributes_set(self):
         """
         Ensure that private attributes correctly set as arguments
@@ -127,13 +114,6 @@ class TestSquareClass(unittest.TestCase):
         r = Square(8,2)
         self.assertEqual(r.area(), 64)
 
-    def test_str(self):
-        """
-        Ensure the str representation is fine
-        """
-
-        r6 = Square(5, 1)
-        self.assertEqual(str(r6), "[Square] (1) 1/0 - 5/5")
 
     def test_update(self):
         """

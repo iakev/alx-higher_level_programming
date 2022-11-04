@@ -25,19 +25,6 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual((isinstance(rec, Base)
                           and type(rec).__name__ != Base.__name__) , True)
 
-    def test_rectangle_id(self):
-        """
-        Ensure Rectangle id is correctly set using
-        Base class __init__ magin method
-        """
-
-        r1 = Rectangle(10, 10, 0, 0)
-        r2 = Rectangle(12, 12, 0, 0)
-        r3 = Rectangle(23, 89, 0, 0, 12)
-        r4 = Rectangle(45, 90, 0, 0)
-        ls = [r1.id, r2.id, r3.id, r4.id]
-        self.assertEqual(ls, [5, 6, 12, 7], "__init__ malfunctioned")
-
     def test_attributes_set(self):
         """
         Ensure that private attributes correctly set as arguments
@@ -128,13 +115,6 @@ class TestRectangleClass(unittest.TestCase):
         r = Rectangle(8,7)
         self.assertEqual(r.area(), 56)
 
-    def test_str(self):
-        """
-        Ensure the str representation is fine
-        """
-
-        r6 = Rectangle(5, 5, 1)
-        self.assertEqual(str(r6), "[Rectangle] (1) 1/0 - 5/5")
 
     def test_update(self):
         """
