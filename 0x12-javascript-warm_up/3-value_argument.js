@@ -9,6 +9,6 @@ process.argv.forEach((val, index) => {
   }
   finalIndex = index;
 });
-if (finalIndex === 1 || finalIndex === 0) {
+if (finalIndex < 1) {
   console.log('No argument');
 }
