@@ -12,6 +12,5 @@ if (argvLen <= 3) {
     argArr.push(argInt);
   }
   argArr.sort((a, b) => a - b);
-  console.log(argArr);
   console.log(argArr[argArr.length - 2]);
 }
