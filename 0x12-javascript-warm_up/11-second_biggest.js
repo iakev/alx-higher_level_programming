@@ -11,6 +11,7 @@ if (argvLen <= 3) {
     const argInt = parseInt(process.argv[i]);
     argArr.push(argInt);
   }
-  argArr.sort();
+  argArr.sort((a, b) => a - b);
+  console.log(argArr);
   console.log(argArr[argArr.length - 2]);
 }
