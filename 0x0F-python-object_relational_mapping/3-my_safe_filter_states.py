@@ -23,12 +23,11 @@ def query_db():
     and performs the query and prints the results
     """
 
-    query = """SELECT * FROM states WHERE name = '{search}'"""
+    query = """SELECT * FROM states WHERE name = %s ORDER BY id"""
     db = MySQLdb.connect(host=hst, user=usr,
                          passwd=passwod, db=dbname, port=prt)
     cur = db.cursor()
-    query = query.format(search=search)
-    cur.execute(query)
+    cur.execute(query, (search,))
     rows = cur.fetchall()
     for row in rows:
         print(f"{row}")
