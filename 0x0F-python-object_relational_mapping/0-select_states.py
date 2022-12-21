@@ -13,6 +13,8 @@ usr = sys.argv[1]
 passwod = sys.argv[2]
 dbname = sys.argv[3]
 prt = 3306
+
+
 def query_db():
     """
     Establishes actual connection to database
@@ -26,6 +28,7 @@ def query_db():
     rows = cur.fetchall()
     for row in rows:
         print(f"{row}")
+
 
 if __name__ == "__main__":
     query_db()
