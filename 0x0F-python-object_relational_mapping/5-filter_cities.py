@@ -7,20 +7,14 @@ all cities in that state where name matches the argument
 import sys
 import MySQLdb
 
-hst = "localhost"
-usr = sys.argv[1]
-passwod = sys.argv[2]
-dbname = sys.argv[3]
-state = str(sys.argv[4])
-prt = 3306
 
-
-def query_db():
-    """
-    Establishes actual connection to database
-    and performs the query and prints the results
-    """
-
+if __name__ == "__main__":
+    hst = "localhost"
+    usr = sys.argv[1]
+    passwod = sys.argv[2]
+    dbname = sys.argv[3]
+    state = str(sys.argv[4])
+    prt = 3306
     query = """SELECT cities.name
     FROM cities
     WHERE cities.state_id =
@@ -35,7 +29,3 @@ def query_db():
     for i in range(len(rows)):
         for j in range(len(rows[i])):
             print(rows[i][j], end=", " if i != len(rows) - 1 else "\n")
-
-
-if __name__ == "__main__":
-    query_db()
