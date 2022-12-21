@@ -15,7 +15,7 @@ if __name__ == "__main__":
     usr = sys.argv[1]
     passwod = sys.argv[2]
     dbname = sys.argv[3]
-    search = str(sys.argv[4])
+    search = sys.argv[4]
     prt = 3306
     query = """SELECT * FROM states WHERE name = '{search}'"""
     db = MySQLdb.connect(host=hst, user=usr,
