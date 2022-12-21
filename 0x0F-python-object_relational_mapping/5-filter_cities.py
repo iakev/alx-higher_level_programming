@@ -17,9 +17,8 @@ if __name__ == "__main__":
     prt = 3306
     query = """SELECT cities.name
     FROM cities
-    WHERE cities.state_id =
-    (SELECT states.id FROM
-    states WHERE states.name = %s)
+    INNER JOIN states
+    ON cities.state_id = states.id
     ORDER BY cities.id"""
     db = MySQLdb.connect(host=hst, user=usr,
                          passwd=passwod, db=dbname, port=prt)
