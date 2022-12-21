@@ -13,9 +13,9 @@ if __name__ == "__main__":
     usr = sys.argv[1]
     passwod = sys.argv[2]
     dbname = sys.argv[3]
-    state = str(sys.argv[4])
+    state = sys.argv[4]
     prt = 3306
-    query = """SELECT cities.name
+    query = """SELECT *
     FROM cities
     INNER JOIN states
     ON cities.state_id = states.id
@@ -23,8 +23,13 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host=hst, user=usr,
                          passwd=passwod, db=dbname, port=prt)
     cur = db.cursor()
-    cur.execute(query, (state,))
+    cur.execute(query)
     rows = cur.fetchall()
+    count = 0
+    cities = []
     for i in range(len(rows)):
-        for j in range(len(rows[i])):
-            print(rows[i][j], end=", " if i != len(rows) - 1 else "\n")
+        if rows[i][4] == state:
+            count += 1
+            cities.append(rows[i][2])
+    for i in range(len(cities)):
+            print(cities[i], end=", " if i !=len(cities) - 1 else "\n")
