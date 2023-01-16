@@ -1,3 +1,3 @@
 #!/bin/bash
 # script taking in a URL, sending a request to the URl,displaying size of conte
-curl -o - $1 -sw '${size_download}\n' | grep -o '[0-9]*'
+curl -s -o /dev/null/ -w '${size_download}\n' 0.0.0.0:5000
