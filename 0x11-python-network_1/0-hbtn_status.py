@@ -10,7 +10,8 @@ if __name__ == "__main__":
     req = urllib.request.Request(url)
     with urllib.request.urlopen(req) as response:
         content = response.read()
+        charset = response.headers.get_content_charset()
         print("Body response:")
         print(f"    - type: {type(content)}")
         print(f"    - content: {content}")
-        print(f"    - utf8 content: {content.decode('utf-8')}")
+        print(f"    - utf8 content: {content.decode(charset)}")
