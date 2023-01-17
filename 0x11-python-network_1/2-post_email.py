@@ -7,7 +7,6 @@ body of response decoded in utf-8
 
 import urllib.request
 import sys
-from pprint import pprint
 if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
