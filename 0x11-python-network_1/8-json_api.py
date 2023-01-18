@@ -22,7 +22,7 @@ if __name__ == "__main__":
                       .format(json_dict.get('id'), json_dict.get('name')))
             else:
                 print("No result")
-        except r.exceptions.JSONDecodeError as e:
+        except JSONDecodeError as e:
             print("Not a valid JSON")
     except r.raise_for_status():
         pass
